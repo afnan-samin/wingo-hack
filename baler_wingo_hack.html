@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hridoy Traders Widget</title>
+<title>EliteX Traders Widget</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -504,8 +504,8 @@
 <!-- PASSWORD GATE -->
 <div id="password-gate">
   <div class="gate-card">
-    <div class="gate-logo">HRIDOY TRADERS</div>
-    <div class="gate-sub">Prediction Widget</div>
+    <div class="gate-logo">EliteX TRADERS</div>
+    <div class="gate-sub">WinGO Prediction Widget</div>
     <div class="gate-input-wrap">
       <input class="gate-input" type="password" id="gate-pw-input"
              placeholder="Enter access password" autocomplete="off">
@@ -522,10 +522,10 @@
 
     <div class="widget-header">
       <div class="widget-brand">
-        <div class="brand-name" id="brand-name-click">HRIDOY TRADERS</div>
+        <div class="brand-name" id="brand-name-click">EliteX TRADERS</div>
         <div class="brand-link">
-          <a href="https://t.me/hridoyvaiOffiicial0" target="_blank" rel="noopener noreferrer">
-            t.me/HridoyTraders
+          <a href="https://t.me/+61-6shf0od82MTNl" target="_blank" rel="noopener noreferrer">
+            t.me/EliteXTraders
           </a>
         </div>
       </div>
@@ -538,7 +538,7 @@
     <div class="widget-body">
 
       <div class="top-row">
-        <div class="mode-badge" id="mode-badge">Wingo 30sec</div>
+        <div class="mode-badge" id="mode-badge">WinGO 30sec</div>
         <div class="time-value" id="live-time">--:--:-- --</div>
       </div>
 
@@ -596,9 +596,10 @@
 
 <!-- MINI PILL -->
 <div id="mini-pill" onclick="restoreWidget()">
-  <div class="pill-inner">
-    <span class="pill-label WAIT" id="pill-label">HT</span>
-    <span class="pill-timer" id="pill-timer">--s</span>
+  <div class="pill-inner" style="flex-direction:column;align-items:flex-start;gap:2px;padding:8px 14px;">
+    <span style="font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,0.9);letter-spacing:1.5px;">EliteX TRADERS</span>
+    <span style="font-family:'Rajdhani',sans-serif;font-size:10px;color:rgba(255,255,255,0.45);letter-spacing:0.5px;" id="pill-period">P: ------</span>
+    <span class="pill-label WAIT" id="pill-label" style="font-size:15px;">--</span>
   </div>
 </div>
 
@@ -865,8 +866,8 @@
     const pillEl = document.getElementById('pill-label');
     pillEl.textContent = pred === 'WAIT' ? 'HT' : pred;
     pillEl.className   = 'pill-label ' + pred;
-    document.getElementById('pill-timer').textContent =
-      (typeof d.countdown === 'number' ? d.countdown + 's' : '--');
+    const lastDigits = (d.period || '------').slice(-6);
+    document.getElementById('pill-period').textContent = 'P: ' + lastDigits;
   }
 
   function setStatus(online, msg) {
